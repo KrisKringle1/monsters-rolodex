@@ -7,19 +7,7 @@ class App extends Component {
     super();
 
     this.state = {
-      monsters: [
-        {
-          id: 1, 
-          name: 'Frankenstein'
-        },
-        {
-          id: 2, 
-          name: 'Dracula'
-        },
-        {id: 3,
-          name: 'Zombie'
-        },
-      ]
+      monsters: []
     }
   }
 
@@ -32,12 +20,9 @@ class App extends Component {
   render(){
     return (
       <div className="App">
-        <CardList name="hello world"/>
-        {
-          this.state.monsters.map(monster => (
-            <h1 key={monster.id}>{monster.name}</h1>
-          ))
-        }
+        <CardList monsters={this.state.monsters  }/>
+
+
     </div>
     )
   }
